@@ -1,41 +1,45 @@
-{{-- resources/views/profile/edit.blade.php --}}
 <x-app-layout>
     @section('title', 'Mon Profil')
 
     <x-slot name="header">
-        <h2 class="h4 fw-bold mb-0 text-dark">
-            {{ __('Mon Profil') }}
+        <h2 class="h5 fw-bold text-dark mb-0">
+            <i class="bi bi-person-circle me-1 text-primary"></i> Mon Profil
         </h2>
     </x-slot>
 
-    <div class="container my-4">
+    <div class="">
         <div class="row justify-content-center">
-            <div class="col-lg-8">
+            <div class="col-md-8 col-lg-10">
 
-                <!-- Carte Profil -->
-                <div class="card shadow-lg border-0 rounded-3">
-                    <div class="card-header" 
-                         style="background: linear-gradient(90deg, #2a1d47, #4b367c); color: #d8cfff;">
-                        <h5 class="mb-0">Modifier mes informations</h5>
+                <!-- Carte Profil Compacte -->
+                <div class="card border-0 shadow-sm rounded-4">
+                    <div class="card-header py-2 px-3 text-white rounded-top-4"
+                         style="background: linear-gradient(90deg, #2a1d47, #4b367c);">
+                        <small class="fw-semibold">
+                            <i class="bi bi-pencil-square me-1"></i> Modifier mes informations
+                        </small>
                     </div>
-                    <div class="card-body p-4">
+                    <div class="card-body py-3 px-3">
 
-                        <!-- Photo de profil -->
-                        <div class="text-center mb-4">
+                        <!-- Avatar ou Initiales -->
+                       <div class="d-flex align-items-center gap-3 mb-3">
                             @if (Auth::user()->profile_photo_url)
                                 <img src="{{ Auth::user()->profile_photo_url }}" 
                                      alt="{{ Auth::user()->name }}" 
-                                     class="rounded-circle shadow-sm border border-light"
-                                     style="width: 90px; height: 90px; object-fit: cover;">
+                                     class="rounded-circle shadow-sm"
+                                     style="width: 64px; height: 64px; object-fit: cover;">
                             @else
                                 <div class="rounded-circle d-flex justify-content-center align-items-center shadow-sm"
-                                     style="width: 90px; height: 90px; font-size: 1.8rem; font-weight: 600;
+                                     style="width: 64px; height: 64px; font-size: 1.3rem; font-weight: 600;
                                             background: radial-gradient(circle, #b49bff, #8a78b0); color:#fff;">
                                     {{ strtoupper(substr(Auth::user()->name, 0, 2)) }}
                                 </div>
                             @endif
-                            <p class="mt-2 mb-0 fw-semibold">{{ Auth::user()->name }}</p>
-                            <small class="text-muted">{{ Auth::user()->email }}</small>
+
+                            <div>
+                                <div class="fw-semibold">{{ Auth::user()->name }}</div>
+                                <div class="small text-muted">{{ Auth::user()->email }}</div>
+                            </div>
                         </div>
 
                         <!-- Formulaire -->
@@ -43,58 +47,59 @@
                             @csrf
                             @method('PATCH')
 
-                            <div class="mb-3">
-                                <label for="name" class="form-label fw-semibold">Nom</label>
+                            <div class="mb-2">
+                                <label for="name" class="form-label small text-muted">Nom</label>
                                 <input id="name" type="text" 
-                                       class="form-control @error('name') is-invalid @enderror" 
-                                       name="name" value="{{ old('name', Auth::user()->name) }}" required autofocus>
+                                       class="form-control form-control-sm @error('name') is-invalid @enderror" 
+                                       name="name" value="{{ old('name', Auth::user()->name) }}" required>
                                 @error('name')
-                                    <div class="invalid-feedback">{{ $message }}</div>
+                                    <div class="invalid-feedback small">{{ $message }}</div>
                                 @enderror
                             </div>
 
-                            <div class="mb-3">
-                                <label for="email" class="form-label fw-semibold">Email</label>
+                            <div class="mb-2">
+                                <label for="email" class="form-label small text-muted">Email</label>
                                 <input id="email" type="email" 
-                                       class="form-control @error('email') is-invalid @enderror" 
+                                       class="form-control form-control-sm @error('email') is-invalid @enderror" 
                                        name="email" value="{{ old('email', Auth::user()->email) }}" required>
                                 @error('email')
-                                    <div class="invalid-feedback">{{ $message }}</div>
+                                    <div class="invalid-feedback small">{{ $message }}</div>
                                 @enderror
                             </div>
 
-                            <hr>
+                            <hr class="my-3">
 
-                            <div class="mb-3">
-                                <label for="password" class="form-label fw-semibold">Nouveau mot de passe</label>
+                            <div class="mb-2">
+                                <label for="password" class="form-label small text-muted">Nouveau mot de passe</label>
                                 <input id="password" type="password" 
-                                       class="form-control @error('password') is-invalid @enderror" 
+                                       class="form-control form-control-sm @error('password') is-invalid @enderror" 
                                        name="password" autocomplete="new-password">
                                 @error('password')
-                                    <div class="invalid-feedback">{{ $message }}</div>
+                                    <div class="invalid-feedback small">{{ $message }}</div>
                                 @enderror
-                                <small class="text-muted">Laissez vide si vous ne souhaitez pas le changer.</small>
+                                <small class="text-muted">Laissez vide si inchangé.</small>
                             </div>
 
                             <div class="mb-3">
-                                <label for="password_confirmation" class="form-label fw-semibold">Confirmer le mot de passe</label>
+                                <label for="password_confirmation" class="form-label small text-muted">Confirmer</label>
                                 <input id="password_confirmation" type="password" 
-                                       class="form-control" 
+                                       class="form-control form-control-sm" 
                                        name="password_confirmation" autocomplete="new-password">
                             </div>
 
-                            <div class="d-flex justify-content-between">
-                                <button type="submit" class="btn fw-semibold text-white"
+                            <div class="d-flex justify-content-end gap-2">
+                                <a href="{{ route('dashboard') }}" class="btn btn-sm btn-outline-secondary">
+                                    Annuler
+                                </a>
+                                <button type="submit" class="btn btn-sm text-white fw-semibold"
                                         style="background: linear-gradient(90deg, #4b367c, #2a1d47);">
                                     Sauvegarder
                                 </button>
-                                <a href="{{ route('dashboard') }}" class="btn btn-outline-secondary">
-                                    Annuler
-                                </a>
                             </div>
                         </form>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
