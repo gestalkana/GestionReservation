@@ -124,3 +124,18 @@ body {
         color: #212529;
         min-height: 100vh;
     }
+    .btn-violet {
+    background: linear-gradient(90deg, #4b367c, #2a1d47); /* Violet foncé */
+    color: #fff;
+    border: none;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    }
+
+    .btn-violet:hover,
+    .btn-violet:focus {
+        background: linear-gradient(90deg, #7c5ebf, #4e3a77); /* Violet plus clair au survol */
+        color: #fff;
+        transform: scale(1.05);
+        box-shadow: 0 0 0 2px #d1c4e9; /* Halo clair */
+    }

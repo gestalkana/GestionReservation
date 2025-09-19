@@ -37,9 +37,11 @@
     </div>
 
     <!-- Bouton flottant moderne -->
-    <button class="btn btn-primary btn-floating shadow" onclick="addQuickEvent()">
+    <!-- Bouton flottant moderne avec couleur violet personnalisée -->
+    <button class="btn btn-violet btn-floating shadow" onclick="addQuickEvent()">
         <i class="bi bi-plus-lg"></i>
     </button>
+
 
     <!-- FullCalendar CSS -->
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
@@ -78,6 +80,12 @@
             padding: 1px 4px;
             font-size: 0.7rem;
             border: none;
+        }
+        /* Hover violet sur les cases du calendrier */
+        .fc .fc-daygrid-day:hover {
+            background-color: #f3e8ff; /* Violet très clair */
+            cursor: pointer;
+            transition: background 0.2s ease-in-out;
         }
 
         /* Badge compact */
