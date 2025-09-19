@@ -1,5 +1,5 @@
 <nav x-data="{ open: false }"
-     class="bg-purple-100 border-b border-purple-200 text-purple-800 dark:bg-purple-900 dark:border-purple-700 dark:text-purple-200">
+      class="bg-violet-navbar text-blanc-matte border-b border-violet-light dark:bg-violet-800 dark:text-white dark:border-violet-700">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16 items-center">

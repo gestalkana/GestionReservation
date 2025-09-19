@@ -1,0 +1,126 @@
+body {
+    background-color: #f8f6fc; /* blanc mat légèrement violet */
+    font-family: 'Poppins', sans-serif;
+    color: #2e2a3b; /* violet/gris foncé pour texte */
+}
+
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5def7; /* léger violet */
+    color: #2e2a3b;
+}
+
+main {
+    padding: 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav a {
+    color: #6b5ca5; /* violet doux */
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #4e3e8c;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d8ccf0;
+    border-radius: 4px;
+}
+
+::selection {
+    background-color: #e8e1fa;
+    color: #2e2a3b;
+}
+
+/* Optional: Card style for page content */
+.card {
+    background: #ffffff;
+    border: 1px solid #ebe5f7;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(128, 115, 170, 0.05);
+}
+body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(180deg, #2a1d47, #4b367c); /* fond global */
+        color: #d8cfff;
+    }
+
+    /* Sidebar custom */
+    #sidebar {
+        min-width: 250px;
+        max-width: 250px;
+        min-height: 100vh;
+        background: linear-gradient(180deg, #2a1d47, #4b367c);
+        color: #d8cfff;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #sidebar .nav-link {
+        color: #d8cfff;
+        transition: all 0.3s ease;
+    }
+
+    #sidebar .nav-link:hover {
+        color: #ffffff;
+        background: rgba(180, 155, 255, 0.2);
+        border-radius: 6px;
+    }
+
+    #sidebar .nav-link.active {
+        background-color: #6f42c1;
+        color: #fff;
+    }
+
+    #sidebar .nav-link i {
+        color: #b49bff;
+    }
+
+    /* Navbar */
+    .navbar {
+        background-color: #2a1d47 !important;
+    }
+
+    .navbar .navbar-brand {
+        color: #b49bff !important;
+        font-weight: 600;
+        text-shadow: 0 0 6px #8a78b0;
+    }
+
+    .navbar .btn {
+        background-color: #b49bff;
+        border: none;
+    }
+
+    .navbar .btn:hover {
+        background-color: #8a78b0;
+    }
+
+    /* Logout link */
+    #sidebar .nav-link.text-danger {
+        color: #ff6b6b !important;
+    }
+
+    #sidebar .nav-link.text-danger:hover {
+        background-color: rgba(255, 107, 107, 0.2);
+    }
+
+    /* Main content (fond clair gardé) */
+    main {
+        padding-top: 20px;
+        background-color: #f8f9fa;
+        color: #212529;
+        min-height: 100vh;
+    }

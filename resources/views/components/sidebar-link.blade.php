@@ -1,15 +1,15 @@
 @props(['href', 'active' => false])
 
 @php
-    $classes = 'block px-4 py-2 rounded hover:bg-violet-light hover:text-violet-darker';
+    $classes = 'nav-link py-1 px-2 rounded';
 
     if ($active) {
-        $classes .= ' bg-violet-light text-violet-gray-dark font-semibold';
+        $classes .= ' active fw-semibold';
     } else {
-        $classes .= ' text-violet-matte';
+        $classes .= ' text-white-50';  // un gris clair
     }
 @endphp
 
-<a href="{{ $href }}" {{ $attributes->merge(['class' => $classes]) }}>
+<a href="{{ $href }}" {{ $attributes->merge(['class' => $classes]) }} aria-current="{{ $active ? 'page' : '' }}">
     {{ $slot }}
 </a>

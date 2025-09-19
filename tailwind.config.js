@@ -16,6 +16,7 @@ export default {
             },
             colors: {
                 'violet-dark': '#4b367c',
+                'violet-navbar': '#543c88', 
                 'violet-darker': '#2a1d47',
                 'violet-light': '#b49bff',
                 'violet-text': '#e0d8f7',
