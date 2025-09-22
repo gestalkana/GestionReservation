@@ -1,0 +1,81 @@
+/* planning.css */
+
+/* Calendrier */
+#calendar {
+    height: 450px;
+    font-size: 0.8rem;
+}
+
+/* Toolbar */
+.fc .fc-button {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    border-radius: 0.4rem;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    color: #212529;
+    transition: all 0.2s ease-in-out;
+}
+.fc .fc-button:hover {
+    background: #0d6efd;
+    color: #fff;
+}
+.fc-toolbar-title {
+    font-size: 1rem;
+    font-weight: 600;
+}
+.fc-event {
+    border-radius: 0.4rem;
+    padding: 1px 4px;
+    font-size: 0.7rem;
+    border: none;
+}
+.fc .fc-daygrid-day:hover {
+    background-color: #f3e8ff;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+}
+
+/* Badge compact */
+.badge {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.6rem;
+}
+
+/* Bouton flottant */
+.btn-floating {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    transition: background 0.3s ease;
+    z-index: 1050;
+}
+.btn-floating:hover {
+    background-color: #0b5ed7 !important;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    #calendar {
+        height: 400px;
+        font-size: 0.75rem;
+    }
+    .fc .fc-button {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.4rem;
+    }
+    .fc-toolbar-title {
+        font-size: 0.9rem;
+    }
+    .badge {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.5rem;
+    }
+}
