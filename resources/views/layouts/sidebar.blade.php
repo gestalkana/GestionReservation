@@ -35,20 +35,39 @@
 
    <!-- Navigation -->
 <nav class="nav nav-pills flex-column gap-2 mb-auto">
+    <!-- Tableau de bord -->
     <x-sidebar-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
         <i class="bi bi-speedometer2 me-2 sidebar-icon"></i> Dashboard
     </x-sidebar-link>
 
+    <!-- Planning / calendrier -->
     <x-sidebar-link href="{{ route('planning') }}" :active="request()->routeIs('planning')">
         <i class="bi bi-calendar-week me-2 sidebar-icon"></i> Planning
     </x-sidebar-link>
 
-    <x-sidebar-link href="{{ route('profile.edit') }}" :active="request()->routeIs('profile.edit')">
-        <i class="bi bi-person-circle me-2 sidebar-icon"></i> Profile
+    <!-- Réservations -->
+    <x-sidebar-link href="{{-- route('reservations.index') --}}" :active="request()->routeIs('reservations.*')">
+        <i class="bi bi-calendar-check me-2 sidebar-icon"></i> Réservations
     </x-sidebar-link>
 
+    <!-- Clients -->
+    <x-sidebar-link href="{{-- route('clients.index') --}}" :active="request()->routeIs('clients.*')">
+        <i class="bi bi-people me-2 sidebar-icon"></i> Clients
+    </x-sidebar-link>
+
+    <!-- Services / Offres -->
+    <x-sidebar-link href="{{-- route('services.index') --}}" :active="request()->routeIs('services.*')">
+        <i class="bi bi-box-seam me-2 sidebar-icon"></i> Services
+    </x-sidebar-link>
+
+    <!-- Profil utilisateur -->
+    <x-sidebar-link href="{{route('profile.edit') }}" :active="request()->routeIs('profile.edit')">
+        <i class="bi bi-person-circle me-2 sidebar-icon"></i> Profil
+    </x-sidebar-link>
+
+    <!-- Paramètres -->
     <x-sidebar-link href="{{-- route('settings') --}}" :active="request()->routeIs('settings')">
-        <i class="bi bi-gear me-2 sidebar-icon"></i> Settings
+        <i class="bi bi-gear me-2 sidebar-icon"></i> Paramètres
     </x-sidebar-link>
 </nav>
 

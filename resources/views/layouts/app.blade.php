@@ -23,6 +23,7 @@
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/main.min.css" rel="stylesheet">
     <!-- Feuilles de styles personnalisées -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
+    @stack('styles')
 </head>
 
 <body>
@@ -72,42 +73,6 @@
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            let calendarEl = document.getElementById('calendar');
-
-            let calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth', // Vue par défaut : mois
-                headerToolbar: {
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: 'dayGridMonth,timeGridWeek,timeGridDay' // vues dispo
-                },
-                locale: 'fr', // langue française
-                navLinks: true, // cliquer sur le jour -> vue détaillée
-                selectable: true, // possibilité de sélectionner
-                editable: true, // rendre déplaçable les events
-                events: [
-                    { title: 'Réunion équipe', start: '2025-09-20T10:00:00' },
-                    { title: 'Démo Client', start: '2025-09-22', end: '2025-09-23' },
-                    { title: 'Anniversaire Marie', start: '2025-09-25' },
-                ],
-                select: function(info) {
-                    let eventName = prompt("Nom de l'événement ?");
-                    if (eventName) {
-                        calendar.addEvent({
-                            title: eventName,
-                            start: info.start,
-                            end: info.end,
-                            allDay: info.allDay
-                        });
-                    }
-                    calendar.unselect();
-                }
-            });
-
-            calendar.render();
-        });
-    </script>
+    @stack('scripts')
 </body>
 </html>
