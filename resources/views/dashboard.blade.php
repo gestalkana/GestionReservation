@@ -66,7 +66,9 @@
         <!-- Derniers reservation -->
         <div class="col-lg-4 mb-4">
             <div class="card shadow-sm border-0 rounded-4 h-100">
-                <div class="card-header bg-white fw-semibold border-bottom-0">📋 Réservations récentes</div>
+                <div class="card-header bg-white fw-semibold border-bottom-0">
+                     <i class="bi bi-calendar-check me-2 sidebar-icon"></i> Réservations récentes
+                </div>
                 <div class="card-body p-0">
                     <table class="table table-sm table-hover mb-0">
                         <thead class="table-light">
