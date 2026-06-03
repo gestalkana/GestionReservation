@@ -51,7 +51,7 @@
     </x-sidebar-link>
 
     <!-- Clients -->
-    <x-sidebar-link href="{{-- route('clients.index') --}}" :active="request()->routeIs('clients.*')">
+    <x-sidebar-link href="{{ route('clients.index') }}" :active="request()->routeIs('clients.*')">
         <i class="bi bi-people me-2 sidebar-icon"></i> Clients
     </x-sidebar-link>
 

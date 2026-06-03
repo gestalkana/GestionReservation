@@ -80,22 +80,22 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Jean Dupont</td>
+                                <td>Jean Claude</td>
                                 <td>22/09/2025</td>
                                 <td><span class="badge bg-success-subtle text-success">Confirmée</span></td>
                             </tr>
                             <tr>
-                                <td>Marie Curie</td>
+                                <td>Marie Nirina</td>
                                 <td>22/09/2025</td>
                                 <td><span class="badge bg-warning-subtle text-warning">En attente</span></td>
                             </tr>
                             <tr>
-                                <td>Ali Baba</td>
+                                <td>Alain Baba</td>
                                 <td>21/09/2025</td>
                                 <td><span class="badge bg-danger-subtle text-danger">Annulée</span></td>
                             </tr>
                             <tr>
-                                <td>Sophie Martin</td>
+                                <td>Kiala Sophie</td>
                                 <td>20/09/2025</td>
                                 <td><span class="badge bg-success-subtle text-success">Confirmée</span></td>
                             </tr>
