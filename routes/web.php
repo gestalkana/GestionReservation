@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -23,5 +24,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('clients', ClientController::class)->middleware(['auth', 'verified']);
+
+Route::resource('services', ServiceController::class)->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';

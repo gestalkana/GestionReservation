@@ -56,7 +56,7 @@
     </x-sidebar-link>
 
     <!-- Services / Offres -->
-    <x-sidebar-link href="{{-- route('services.index') --}}" :active="request()->routeIs('services.*')">
+    <x-sidebar-link href="{{ route('services.index') }}" :active="request()->routeIs('services.*')">
         <i class="bi bi-box-seam me-2 sidebar-icon"></i> Services
     </x-sidebar-link>
 
