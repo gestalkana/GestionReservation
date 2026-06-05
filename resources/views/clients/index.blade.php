@@ -62,7 +62,8 @@
                     <tbody>
                         @forelse ($clients as $client)
                             <tr>
-                                <td class="text-muted small">{{ $loop->iteration }}</td>
+                                <td class="text-muted small">
+                                    {{ ($clients->currentPage() - 1) * $clients->perPage() + $loop->iteration }}</td>
 
                                 <td class="fw-semibold">
                                     {{ $client->nom }}
@@ -89,11 +90,15 @@
                                             <i class="bi bi-eye"></i>
                                         </a>
 
-                                        <a href="{{ route('clients.edit', $client) }}"
-                                           class="btn btn-outline-warning"
-                                           title="Modifier">
+                                        <button
+                                            type="button"
+                                            class="btn btn-outline-warning"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#editClientModal{{ $client->id }}">
                                             <i class="bi bi-pencil"></i>
-                                        </a>
+                                        </button>
+
+                                        @include('clients.edit')
 
                                         <form action="{{ route('clients.destroy', $client) }}"
                                               method="POST"

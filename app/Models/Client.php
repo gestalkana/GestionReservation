@@ -9,5 +9,9 @@ class Client extends Model
 {
     /** @use HasFactory<\Database\Factories\ClientFactory> */
     use HasFactory;
-    protected $fillable = ['nom', 'prenom', 'age', 'telephone','email', 'photo', 'adresse'];
+    protected $fillable = ['nom', 'prenom', 'date_naissance', 'telephone','email', 'photo', 'adresse'];
+
+     protected $casts = [
+        'date_naissance' => 'date',
+    ];
 }

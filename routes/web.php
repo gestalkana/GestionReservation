@@ -27,4 +27,6 @@ Route::resource('clients', ClientController::class)->middleware(['auth', 'verifi
 
 Route::resource('services', ServiceController::class)->middleware(['auth', 'verified']);
 
+Route::put('/clients/{client}/photo', [ClientController::class, 'updatePhoto'])
+    ->name('clients.update.photo');
 require __DIR__.'/auth.php';
