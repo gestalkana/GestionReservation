@@ -51,12 +51,12 @@
     </x-sidebar-link>
 
     <!-- Clients -->
-    <x-sidebar-link href="{{-- route('clients.index') --}}" :active="request()->routeIs('clients.*')">
+    <x-sidebar-link href="{{ route('clients.index') }}" :active="request()->routeIs('clients.*')">
         <i class="bi bi-people me-2 sidebar-icon"></i> Clients
     </x-sidebar-link>
 
     <!-- Services / Offres -->
-    <x-sidebar-link href="{{-- route('services.index') --}}" :active="request()->routeIs('services.*')">
+    <x-sidebar-link href="{{ route('services.index') }}" :active="request()->routeIs('services.*')">
         <i class="bi bi-box-seam me-2 sidebar-icon"></i> Services
     </x-sidebar-link>
 

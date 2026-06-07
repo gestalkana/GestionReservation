@@ -23,6 +23,10 @@
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/main.min.css" rel="stylesheet">
     <!-- Feuilles de styles personnalisées -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
+    <!-- //cropper css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.css">
+
+
     @stack('styles')
 </head>
 
@@ -72,7 +76,9 @@
 
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+    <!-- crooper js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.js"></script>
+    <script src="{{ asset('client/modal-photo.js') }}"></script>
     @stack('scripts')
 </body>
 </html>

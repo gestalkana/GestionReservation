@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
             labels: ['Jan', 'Fév', 'Mars', 'Avr', 'Mai', 'Juin'],
             datasets: [{
                 label: 'Ventes',
-                data: [1200, 1900, 3000, 2500, 3200, 4000],
+                data: [1200000, 1900000, 3000000, 2500000, 3200000, 4000000],
                 borderColor: '#0d6efd',
                 backgroundColor: 'rgba(13, 110, 253, 0.2)',
                 tension: 0.4,
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     beginAtZero: true,
                     ticks: {
                         callback: function (value) {
-                            return '$' + value;
+                            return value + ' Ar';
                         }
                     }
                 }

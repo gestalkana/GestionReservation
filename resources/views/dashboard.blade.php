@@ -66,7 +66,9 @@
         <!-- Derniers reservation -->
         <div class="col-lg-4 mb-4">
             <div class="card shadow-sm border-0 rounded-4 h-100">
-                <div class="card-header bg-white fw-semibold border-bottom-0">📋 Réservations récentes</div>
+                <div class="card-header bg-white fw-semibold border-bottom-0">
+                     <i class="bi bi-calendar-check me-2 sidebar-icon"></i> Réservations récentes
+                </div>
                 <div class="card-body p-0">
                     <table class="table table-sm table-hover mb-0">
                         <thead class="table-light">
@@ -78,22 +80,22 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Jean Dupont</td>
+                                <td>Jean Claude</td>
                                 <td>22/09/2025</td>
                                 <td><span class="badge bg-success-subtle text-success">Confirmée</span></td>
                             </tr>
                             <tr>
-                                <td>Marie Curie</td>
+                                <td>Marie Nirina</td>
                                 <td>22/09/2025</td>
                                 <td><span class="badge bg-warning-subtle text-warning">En attente</span></td>
                             </tr>
                             <tr>
-                                <td>Ali Baba</td>
+                                <td>Alain Baba</td>
                                 <td>21/09/2025</td>
                                 <td><span class="badge bg-danger-subtle text-danger">Annulée</span></td>
                             </tr>
                             <tr>
-                                <td>Sophie Martin</td>
+                                <td>Kiala Sophie</td>
                                 <td>20/09/2025</td>
                                 <td><span class="badge bg-success-subtle text-success">Confirmée</span></td>
                             </tr>
