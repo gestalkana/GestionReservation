@@ -8,7 +8,7 @@
                 <span class="fw-semibold">Services</span>
             </div>
 
-            <a href="{{ route('clients.create') }}" class="btn btn-sm btn-primary">
+            <a href="{{ route('services.create') }}" class="btn btn-sm btn-primary">
                 <i class="bi bi-plus-lg me-1"></i>
                 Ajouter
             </a>
@@ -60,11 +60,21 @@
                                             <i class="bi bi-eye"></i>
                                         </a>
 
-                                        <a href="{{ route('services.edit', $service) }}"
+                                       <!--  <a href="{{ route('services.edit', $service) }}"
                                            class="btn btn-outline-warning"
                                            title="Modifier">
                                             <i class="bi bi-pencil"></i>
-                                        </a>
+                                        </a> -->
+                                        <button type="button"
+                                                class="btn btn-outline-warning"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#editServiceModal{{ $service->id }}">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        @include('services.edit')
+
+                                        
+
 
                                         <form action="{{ route('services.destroy', $service) }}"
                                               method="POST"
@@ -102,4 +112,5 @@
         @endif
 
     </div>
+
 </x-app-layout>

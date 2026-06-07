@@ -15,8 +15,9 @@ class ServiceController extends Controller
     {
         //Recupère la liste de tous les services ainsi que ces types
         $services = Service::with('Service_types')->get();
+        $service_types = Service_types::All();
 
-        return view('services.index', compact('services'));
+        return view('services.index', compact('services', 'service_types'));
     }
 
     /**
@@ -24,7 +25,8 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        $service_types = Service_types::All();
+        return view('services.create', compact('service_types'));
     }
 
     /**
@@ -32,7 +34,17 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $validated = $request->validate([
+            'service_type_id' => ['required', 'exists:service_types,id'],
+            'nom'             => ['required', 'string', 'max:255'],
+            'description'     => ['nullable', 'string'],
+        ]);
+
+        Service::create($validated);
+
+        return redirect()
+            ->route('services.index')
+            ->with('success', 'Service crée avec succès.');
     }
 
     /**
@@ -40,7 +52,10 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
-        //
+        $service->load('service_types');
+        $service_types = Service_types::All();
+
+        return view('services.show', compact('service', 'service_types'));
     }
 
     /**
@@ -54,9 +69,20 @@ class ServiceController extends Controller
     /**
      * Update the specified resource in storage.
      */
+    
     public function update(Request $request, Service $service)
     {
-        //
+        $validated = $request->validate([
+            'service_type_id' => ['required', 'exists:service_types,id'],
+            'nom'             => ['required', 'string', 'max:255'],
+            'description'     => ['nullable', 'string'],
+        ]);
+
+        $service->update($validated);
+
+        return redirect()
+            ->route('services.index')
+            ->with('success', 'Service modifié avec succès.');
     }
 
     /**
@@ -64,6 +90,8 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
-        //
+        $service->delete();
+
+        return redirect()->route('services.index');
     }
 }

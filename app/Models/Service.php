@@ -13,7 +13,7 @@ class Service extends Model
 
     public function service_types(){
 
-        return $this->belongsTo(Service_types::class);
+        return $this->belongsTo(Service_types::class, 'service_type_id');
     
     }
 }
