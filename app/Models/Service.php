@@ -13,7 +13,13 @@ class Service extends Model
 
     public function service_types(){
 
-        return $this->belongsTo(Service_types::class, 'service_type_id');
+        return $this->belongsTo(Service_types::class, 'service_type_id'); //l'id est nécéssaire si on ne suit pas la convention
     
+    }
+    
+    public function reservations(){
+
+        return $this->hasMany(Reservation::class);
+
     }
 }

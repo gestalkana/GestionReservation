@@ -22,5 +22,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ClientSeeder::class);
         $this->call(Service_typesSeeder::class);
         $this->call(ServiceSeeder::class);
+        $this->call(ReservationSeeder::class);
     }
 }

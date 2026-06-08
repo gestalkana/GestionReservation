@@ -14,4 +14,10 @@ class Client extends Model
      protected $casts = [
         'date_naissance' => 'date',
     ];
+
+    public function reservations() {
+
+      return $this->hasMany(Reservation::class);
+      
+    }
 }

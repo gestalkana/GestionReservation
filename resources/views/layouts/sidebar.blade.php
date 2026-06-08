@@ -46,7 +46,7 @@
     </x-sidebar-link>
 
     <!-- Réservations -->
-    <x-sidebar-link href="{{-- route('reservations.index') --}}" :active="request()->routeIs('reservations.*')">
+    <x-sidebar-link href="{{ route('reservations.index') }}" :active="request()->routeIs('reservations.*')">
         <i class="bi bi-calendar-check me-2 sidebar-icon"></i> Réservations
     </x-sidebar-link>
 
