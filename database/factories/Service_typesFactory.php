@@ -16,15 +16,15 @@ class Service_typesFactory extends Factory
      */
     public function definition(): array
     {
-        $types = [
-            'hebergement',
-            'restauration',
-            'evenement',
-            'spa',
-            'transport',
-        ];
+        // $types = [
+        //     'hebergement',
+        //     'restauration',
+        //     'evenement',
+        //     'spa',
+        //     'transport',
+        // ];
         return [
-            'nom' => fake()->randomElement($types),
+        //     'nom' => fake()->randomElement($types),
         ];
     }
 }

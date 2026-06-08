@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         data: {
             labels: ['Jan', 'Fév', 'Mars', 'Avr', 'Mai', 'Juin'],
             datasets: [{
-                label: 'Ventes',
+                label: 'Ventes 6 dernier Mois',
                 data: [1200000, 1900000, 3000000, 2500000, 3200000, 4000000],
                 borderColor: '#0d6efd',
                 backgroundColor: 'rgba(13, 110, 253, 0.2)',

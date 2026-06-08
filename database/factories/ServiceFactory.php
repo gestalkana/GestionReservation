@@ -27,7 +27,7 @@ class ServiceFactory extends Factory
         return [
             'nom' => fake()->randomElement($nom),
             'description' => fake()->text(),
-            'service_type_id' => Service_types::factory(),
+            'service_type_id' => Service_types::inRandomOrder()->first()->id,
         ];
     }
 }
