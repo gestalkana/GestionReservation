@@ -8,9 +8,9 @@
                 <span class="fw-semibold">Services</span>
             </div>
 
-            <a href="{{ route('services.create') }}" class="btn btn-sm btn-primary">
+            <a href="{{ route('services.service_types.create') }}" class="btn btn-sm btn-primary">
                 <i class="bi bi-plus-lg me-1"></i>
-                Ajouter
+                Nouveau type de service
             </a>
         </div>
     </x-slot>
@@ -60,11 +60,6 @@
                                             <i class="bi bi-eye"></i>
                                         </a>
 
-                                       <!--  <a href="{{ route('services.edit', $service) }}"
-                                           class="btn btn-outline-warning"
-                                           title="Modifier">
-                                            <i class="bi bi-pencil"></i>
-                                        </a> -->
                                         <button type="button"
                                                 class="btn btn-outline-warning"
                                                 data-bs-toggle="modal"
@@ -72,9 +67,6 @@
                                             <i class="bi bi-pencil"></i>
                                         </button>
                                         @include('services.edit')
-
-                                        
-
 
                                         <form action="{{ route('services.destroy', $service) }}"
                                               method="POST"
@@ -110,7 +102,19 @@
                 {{ $services->links() }}
             </div>
         @endif
-
+        <!-- Creation de service  -->
+        <a href="{{ route('services.create') }}"
+           class="btn btn-violet rounded-circle shadow position-fixed d-flex align-items-center justify-content-center"
+           style="
+                width: 60px;
+                height: 60px;
+                bottom: 25px;
+                right: 25px;
+                z-index: 1050;
+           "
+           title="Ajouter un service">
+            <i class="bi bi-plus-lg fs-4"></i>
+        </a>
     </div>
 
 </x-app-layout>

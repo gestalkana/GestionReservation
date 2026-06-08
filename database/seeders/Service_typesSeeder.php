@@ -13,6 +13,15 @@ class Service_typesSeeder extends Seeder
      */
     public function run(): void
     {
-        Service_types::factory()->count(5)->create();
+       Service_types::factory()
+        ->count(5)
+        ->sequence(
+            ['nom' => 'hebergement'],
+            ['nom' => 'restauration'],
+            ['nom' => 'evenement'],
+            ['nom' => 'spa'],
+            ['nom' => 'transport'],
+        )
+        ->create();
     }
 }
