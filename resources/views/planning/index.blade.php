@@ -25,8 +25,8 @@
                     <span class="badge rounded-pill bg-warning text-dark">
                         <i class="bi bi-hourglass-split me-1"></i> Réservation en attente
                     </span>
-                    <span class="badge rounded-pill bg-secondary">
-                        <i class="bi bi-archive me-1"></i> Historique
+                    <span class="badge rounded-pill bg-primary">
+                        <i class="bi bi-archive me-1"></i> Terminée
                     </span>
                     <span class="badge rounded-pill bg-info text-dark">
                         <i class="bi bi-clipboard-check me-1"></i> Tâche interne

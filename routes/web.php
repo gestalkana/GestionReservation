@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServiceTypesController;
+use App\Http\Controllers\ReservationController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -33,5 +34,7 @@ Route::put('/clients/{client}/photo', [ClientController::class, 'updatePhoto'])-
 Route::resource('service_types', ServiceTypesController::class)
                 ->middleware(['auth', 'verified'])
                 ->names('services.service_types');
+
+Route::resource('reservations', ReservationController::class)->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';
